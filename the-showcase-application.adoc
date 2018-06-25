@@ -1,0 +1,39 @@
+## Showcase Application
+
+Our showcase application is located
+https://github.com/aerogear/android-showcase-template[here] on GitHub.
+
+You should fork it to your own GitHub account for the purpose of this tutorial. 
+Use the fork button in the top-right the repository page to do this.
+
+Once the fork completes you should clone it locally using a variant of the 
+following commands:
+
+image::git-clone-showcase.svg[Cloning Android Showcase Link,880,align="center"]
+
+Next, open Android Studio, click "Open an existing Android Studio project"
+and choose the directory we just cloned.
+
+image::android-open-project.png[Opening Android Showcase Link,800,align="center"]
+
+Once the project is loaded in Android Studio you should be able to use the
+`Run > Run 'app'` option from the menu to start the application in an emulator. 
+A `Select Deployment Target` window should open and from here you can choose
+"Create New Virtual Device".
+
+image::android-create-device-a.png[Create Android Device Window Link,800,align="center"]
+
+Use the options shown below in the subsequent dialogs that are presented.
+
+image::android-create-device-b.png[Create Android Device Model Link,800,align="center"]
+
+image::android-create-device-c.png[Create Android Device OS Link,800,align="center"]
+
+image::android-create-device-d.png[Create Android Device Options Link,800,align="center"]
+
+After clicking "Finish" on the final dialog you will be able to launch your
+application on the newly created Google Pixel 2 emulator. It will take a few
+moments to compile your application and launch the emulator, but will look as
+follows once complete.
+
+image::android-running.png[Running Android Device Link,800,align="center"]

@@ -1,0 +1,41 @@
+## Using Digger
+
+We'll use the digkins CLI that we installed earlier to interact with our Mobile
+CI/CD Service. Before we can do this we'll need to get a username and password
+to do so.
+
+Open your Jenkins instance via the URL http://jenkins-myproject.${HOSTNAME}. It
+will present you with the option to login using your OpenShift credentials via 
+OAuth as shown. Go ahead and login.
+
+image::jenkins-login.png[Jenkins Login Link,800,align="center"]
+
+Once logged in we'll need to get a token so we can use the Digger CLI to trigger
+builds. Using the Jenkins side menu choose `People`, then choose
+`developer-admin` from the list, then choose `Configure` from the side menu.
+You can also navigate to this screen directly via the URL 
+http://jenkins-myproject.${HOSTNAME}/user/developer-admin/configure.
+
+image::jenkins-user-token.png[Jenkins User Token Link,800,align="center"]
+
+From this screen you can click "Show API Token". Copy the token and head over to
+your terminal. Using the Digger CLI and our token we can use Jenkins to build
+our Android project. Use `digger --help` and `digger login --help` to get an
+idea of how you can use the various commands. The example below shows how you
+can login and trigger a build.
+
+image::jenkins-digger-create.png[Jenkins Build from CLI Link,800,align="center"]
+
+After issuing the above commands return to your Jenkins UI and browse the
+"showcase" project and view build pipeline and logs as shown below. We'll
+leverage pipelines in a subsequent section to scan our binary using the
+https://github.com/aerogear/aerogear-kryptowire-jenkins-plugin[AeroGear Jenkins Kryptowire Plugin].
+
+image::jenkins-build-pipeline.png[Jenkins Build Pipeline Link,800,align="center"]
+image::jenkins-build-logs.png[Jenkins Build Logs Link,800,align="center"]
+
+Once the build is complete you can find the download URL using the command 
+`digger artifact showcase ${BUILD_NUMBER}`. In our case that means we'd issue
+the command `digger artifact showcase 1` since we've just run our first build. 
+We can use the download URL to install and test the application on an Android
+device.

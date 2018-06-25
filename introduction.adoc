@@ -1,0 +1,116 @@
+## Introduction
+
+_Note_: This lab assumes you've completed the starter OpenShift labs and are
+familiar with basic OpenShift concepts.
+
+Continuous Integration and Continuous Delivery are two separate but closely
+concepts that help us to build better software. CI provides feedback to the
+developers that enables them to quickly determine if they broke anything and
+that they're building an application correctly. CD provides frequent builds 
+such that software can be rapidaly deployed, tested, and released.
+
+In this lab we'll create a continious integration and continuous delivery
+pipeline for a native Android application using a Jenkins CI instance deployed
+on OpenShift, and https://github.com/aerogear/aerogear-digger[AeroGear Digger].
+We'll also integrate our application with Kryptowire for deep security scanning
+of our binaries to continuosuly have security at the forefront of our
+development processes.
+
+## How is Mobile Different?
+
+The truth is that mobile isn't all that different conceptually, but they're are
+some unique challenges.
+
+Delivery requires pushing applications to an MDM or other target such as
+Google's Play Store or Apple's App Store.
+
+The environment in which your application is deployed also isn't consistent due
+to the vast number of OS versions and vendors in the marketplace. You might need
+to test across these different devices via Google's Firebase Test Lab.
+
+On-device security is also a significant factor in mobile development.
+Typical users entrust their mobile devices and applications with access to
+sensitive data from banking to emails. Applications containing vulnerabilities
+can be exploited by malicious actors to divulge sensitive data or provide attack
+vectors.
+
+Finally, mobile CI/CD has typically had few to none available open source
+solutions that can be deployed in on-premise, hybird, or public cloud
+environments to meet the needs of enterprises and goverment.
+
+## AeroGear Android Showcase Application
+
+The https://github.com/aerogear/android-showcase-template[Android Showcase] is a
+native Android application designed to demonstrate the capabilities that
+Red Hat's mobile SDKs and Mobile Services on OpenShift
+offer.
+
+Since it is a native Android application it is built using Java and the Android 
+SDKs. To compile  this application we'll need to have Java and the Android SDKs
+installed on the CI platform alongside a plethora of other supporting libraries
+and tools.
+
+## AeroGear Digger
+
+Digger is an AeroGear opensource project that provides a solution to creating a
+mobile CI/CD pipeline on OpenShift. 
+
+Digger will manage the configuration of mobile SDKs, Kubernetes Pods, and
+provides utilities for signing, archiving, and distributing via the Jenkinsfile
+in an mobile project repository.
+
+## Jenkins CI Engine
+Jenkins is a self-contained, extensible, open source automation server which can
+be used to automate all sorts of tasks such as building, testing, and deploying
+software.
+
+Although Jenkins was first popular as a continuous integration engine, its usage
+domain soon expanded to other areas such as Continuous Delivery pipelines due to
+its sheer popularity.
+
+Jenkins enjoys a very active community which has built out hundreds of plugins
+to extend Jenkins to automate almost anything. Jenkins provides support for all
+popular source code management systems (SCM), popular build tools, as well as
+testing frameworks and report generators. The latest major release of Jenkins
+included a powerful Continuous Delivery pipeline support using a Groovy Domain
+Specific Language (DSL) which is referred to as Pipeline as Code.
+
+## OpenShift Container Platform
+OpenShift is a container application platform from Red Hat that builds on top of
+docker and Kubernetes to to let you easily and quickly build, develop, 
+and deploy containerized applications in nearly any infrastructure, public or
+private. OpenShift is optimized for continuous application development and
+multi-tenant deployment. OpenShift adds developer and operations-centric tools
+on top of Kubernetes to enable rapid application development, easy deployment
+and scaling, and long-term lifecycle maintenance for small and large teams.
+
+// image::devops-intro-openshift-arch.png[OpenShift Architecture]
+
+OpenShift builds a developer-centric workflow around Docker containers and
+Kubernetes runtime concepts. There are few concepts you need to be familiar with
+when using OpenShift:
+
+_Container_: Linux containers are lightweight mechanisms for isolating running
+processes so that they are limited to interacting with only their designated
+resources.
+
+_Image_: a binary that includes all of the requirements for running a single
+container, as well as metadata describing its needs and capabilities.
+
+_Image Registry_: a service for storing and retrieving docker-formatted container images. A registry contains a collection of one or more image repositories.
+
+_Pod_: one or more containers deployed together on one host, and the smallest compute unit that can be defined, deployed, and managed.
+
+_Image Stream_: lets you easily tag, import, and publish docker images from the integrated image registry in OpenShift.
+
+_Build Config_: allows you to launch docker builds, build directly from source code or application binary, or trigger Jenkins Pipeline jobs whenever an image stream tag is updated. 
+
+_Deployment Config_: allows you to redeploy whenever a new image becomes available.
+
+_Service_: an internal load balancer which identifies a set of pods in order to proxy the connections it receives to them. Backing pods can be added to or removed from a service arbitrarily while the service remains consistently available, enabling anything that depends on the service to refer to it at a consistent address.
+
+_Route_: make it trivial to expose your Kubernetes services via a public DNS name.
+
+_Template_: describes a set of objects (pods, build configs, deployment configs, etc) that can be parameterized and processed to produce a list of objects for creation by OpenShift.
+
+As an administrator, you can enable your developers to request new Projects which come with predefined roles, quotas, and security controls to fairly divide access.

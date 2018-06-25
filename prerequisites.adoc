@@ -1,0 +1,58 @@
+## Prerequisites
+
+To participate in this workshop you'll need the following installed on your
+machine.
+
+### Git
+
+You can install Git using the instructions at https://git-scm.com/[Git SCM]. 
+This workshop is tested on Git 2.14 and above.
+
+
+### Android Studio
+
+Install https://developer.android.com/studio/[Android Studio] from this link.
+
+Once Android Studio is installed you'll need to download some SDKs and Emulator 
+images. You can do this by opening Android Studio and choosing 
+`Tools > Android > SDK Manager`.
+
+image::android-sdk-manager.png[Android SDK Manager Link,880,align="center"]
+
+With this open you can choose the SDKs you'd like to install. Choose API 26,
+then click `Apply` and follow the onscreen instructions to complete the install.
+
+image::android-sdk-manager-open.png[Android SDK Manager Install Link,880,align="center"]
+
+
+### Node.js v8.x
+
+There are various methods for installing Node.js in your development
+environment, but we recommend using https://github.com/creationix/nvm[nvm].
+`nvm` will allow you to easily swicth Node.js versions at anytime from a
+terminal and also installs using sensible permissions that avoid ownership/sudo
+issues.
+
+Once `nvm` is installed you can install specific Node.js versions like so, and
+can be as specific as you like with the version tag:
+
+```
+$ nvm install 8
+$ nvm use 8
+```
+
+
+### npm v5.x
+
+The npm CLI will be installed alongside Node.js, but ensure you have at least
+version 5 of npm installed like so:
+
+```
+$ npm install -g npm@5
+```
+
+
+### Digger CLI
+
+Once you have Node.js and npm installed, the Digger CLI can be installed via npm
+using the command `npm install -g aerogear-digger-node-client`.
