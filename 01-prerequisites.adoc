@@ -1,0 +1,32 @@
+## Prerequisites
+
+To participate in this workshop you'll need the following installed on your
+machine.
+
+#### Git
+
+You can install Git using the instructions at https://git-scm.com/[Git SCM]. 
+This workshop is tested on Git 2.14 and above.
+
+An installation can be verified by simply running the `git version` command in a
+terminal:
+
+```bash
+git --version
+```
+
+#### Android Studio
+
+Installers for https://developer.android.com/studio/[Android Studio] can be
+found at this link.
+
+Once Android Studio is installed you'll need to download some SDKs and Emulator 
+images. You can do this by opening Android Studio and choosing 
+`Tools > Android > SDK Manager`.
+
+image::android-sdk-manager.png[Android SDK Manager Link,880,align="center"]
+
+With this open you can choose the SDKs you'd like to install. Choose API 26,
+then click `Apply` and follow the onscreen instructions to complete the install.
+
+image::android-sdk-manager-open.png[Android SDK Manager Install Link,880,align="center"]

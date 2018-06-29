@@ -1,0 +1,26 @@
+modules:
+  00-introduction:
+    name: Introduction
+  01-prerequisites:
+    name: Prerequisites
+  02-android-showcase-application:
+    name: Android Showcase Application
+  03-create-a-mobile-app-representation:
+    name: Register a Mobile Application
+  04-provision-digger:
+    name: Provision the Mobile CI/CD Service
+  05-create-a-build-config:
+    name: Create a Build Config
+    vars:
+      OPENSHIFT_HOSTNAME: '192.168.37.1.nip.io'
+      OPENSHIFT_SHORTNAME: 
+      OPENSHIFT_NAME:
+      OPENSHIFT_VERSION:
+  06-first-build:
+    name: First Android Build
+    vars:
+      OPENSHIFT_HOSTNAME: '192.168.37.1.nip.io'
+      OPENSHIFT_SHORTNAME: 
+      OPENSHIFT_NAME:
+      OPENSHIFT_VERSION:
+  

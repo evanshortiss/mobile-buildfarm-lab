@@ -1,0 +1,69 @@
+## First Build
+
+Start the first build by clicking the *Start Build* button, or by using the icon
+to the right of the *Build Config* name to open a menu and choose *Start Build*.
+
+image::openshift-mar-with-build-config.png[OpenShift Start Mobile Build,800,align="center"]
+
+Once the Build starts it will provide updates via the OpenShift UI in realtime.
+The Build is broken down into *Stages* as part of a *Pipeline*. These stages
+are defined in the https://github.com/aerogear/android-showcase-template/blob/master/Jenkinsfile[Jenkinsfile]
+included in the root of the Android Showcase application repository.
+
+```Jenkinsfile
+// Android Jenkinsfile
+node("android"){
+  stage("Checkout"){
+    checkout scm
+  }
+
+  stage ("Prepare"){
+    sh 'chmod +x ./gradlew'
+  }
+
+  stage("Build"){
+    if (params.BUILD_CONFIG == 'release') {
+      sh './gradlew clean assembleRelease' // builds app/build/outputs/apk/app-release.apk file
+    } else {
+      sh './gradlew clean assembleDebug' // builds app/build/outputs/apk/app-debug.apk
+    }
+  }
+
+  stage("Archive"){
+    if (params.BUILD_CONFIG == 'release') {
+      archiveArtifacts artifacts: 'app/build/outputs/apk/**/app-release.apk', excludes: 'app/build/outputs/apk/*-unaligned.apk'
+    } else {
+      archiveArtifacts artifacts: 'app/build/outputs/apk/**/app-debug.apk', excludes: 'app/build/outputs/apk/*-unaligned.apk'
+    }
+  }
+}
+```
+
+This Jenkinsfile performs the following actions:
+
+* Retrieve the application source code from a Git repository
+* Run tasks required to prepare the Build
+* Execute the Gradle build to compile the application
+* Archive the application binary for download later
+
+These steps will look as follows from the OpenShift UI.
+
+image::openshift-mar-build-in-progress.png[OpenShift Mobile Build Pipeline,800,align="center"]
+
+Open your Jenkins instance via the URL http://jenkins-myproject.{{OPENSHIFT_HOSTNAME}}.
+Once logged in you can see the Build progress similar to that shown in the
+OpenShift UI.
+
+image::jenkins-build-pipeline.png[Jenkins Pipeline,800,align="center"]
+
+You can also access the logs for the build should you need to perform debugging
+or find out why a build is failing.
+
+image::jenkins-build-log.png[Jenkins Build Logs,800,align="center"]
+
+Once the Build completes you can click the "Download" button in the OpenShift UI
+to retrieve the apk file for installation on an Android device or emulator. A QR
+code is also generated to simplify installation on a test device using a QR code
+scanner.
+
+image::openshift-mar-build-complete.png[Jenkins Build Logs,800,align="center"]

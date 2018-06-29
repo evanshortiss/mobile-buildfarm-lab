@@ -1,0 +1,37 @@
+## Create a Build Config
+
+Now that we've registered our Mobile Application in OpenShift and provisioned a
+*Mobile CI/CD* Service we can create a *Build Config* for our application.
+
+Navigate back to your Application and to the *Build* tab again. This time the
+tab contents will look different and instead prompt you to create a
+*Build Config* as shown.
+
+image::openshift-mar-with-no-build.png[Create Build Config,800,align="center"]
+
+Click the button to create a *Build Config*. This will load a form that requests
+additional information that will be used by the *Build Config* to access your
+source code, determine if the build is a *debug* or *production*, and inject
+environment variables to customise the build process.
+
+Enter the following infromation in the form:
+
+* Name - android-showcase-debug
+* Git Repository URL - https://github.com/YOURACCOUNT/android-showcase-template
+* Authentication - Public
+* Build Type - Debug
+
+A sample of the completed form is shown below.
+
+image::openshift-mar-with-build-form.png[Build Config Creation,800,align="center"]
+
+We used *Public* sa the *Authentication* setting since our repository is public
+on GitHub, but it's possible to use private Git repositories with industry
+standard authetication methods such as *SSH Keys*.
+
+Once you complete and submit the form you will be presented with an updated
+Build tab that displays your new *Build Config* like as shown.
+
+image::openshift-mar-with-build-config.png[Build Config List,800,align="center"]
+
+That's it, we now have a *Build Config* and are ready to start our first build.

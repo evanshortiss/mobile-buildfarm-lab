@@ -1,0 +1,44 @@
+## Register an Application
+
+To get started, lets register our application in our OpenShift Project.
+Registering the application will allow us to perform various actions related to
+our mobile application in OpenShift including:
+
+* Associating Services with our Application
+* Generating an SDK *mobile-config.json* file
+* Integrating with the Mobile CI/CD Service
+
+Navigate to your OpenShift and sign in using your user name and password. View
+the *Catalog* in OpenShift and choose the *Mobile* tab. From here you'll be
+presented with various options for mobile related services and applications.
+Choose *Android* from the list and follow the onscreen instructions and enter
+the values requested as shown below.
+
+_Note: The package name is found in the https://github.com/aerogear/android-showcase-template/blob/master/app/src/main/AndroidManifest.xml[AndroidManifest.xml]
+or https://github.com/aerogear/ios-showcase-template/blob/master/ios-showcase-template/Info.plist[Info.plist] for iOS applications. This is a reverse domain name style string that uniquely identifies your application._
+
+image::openshift-mar-create.png[OpenShift Register Android Application]
+
+Once the application is registered head to your Project and you'll see that it's
+listed on the Overview page as shown.
+
+image::openshift-mar-view.png[OpenShift View Android Application]
+
+Now that we've registered our Mobile Application in OpenShift we can explore the
+*Build* section for the Application. Click the Appliction's name in the
+*Overview* screen and you'll be presented with the Configuration details for the
+Application as shown.
+
+image::openshift-mar-details.png[OpenShift Mobile Application Details,880,align="center"]
+
+Some information to displayed here is:
+
+* API Key - This will be presented when the application makes calls to services
+* Client Type - iOS, Android, Cordova, etc.
+* Client ID - The package naem of the client
+* SDK Configuration - A guide to configuring the SDK for your client application
+* Mobile Client Config - A configuration that will be updated as we
+provision mobile services for your application to integrate with. This should
+be added to any application as `mobile-config.json`, and will be used by our
+SDKs to interact with mobiel services provisioned on OpenShitf.
+

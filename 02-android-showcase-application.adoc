@@ -1,18 +1,21 @@
-## Showcase Application
+## Explore the Showcase Application
 
 Our showcase application is located
-https://github.com/aerogear/android-showcase-template[here] on GitHub.
+https://github.com/aerogear/android-showcase-template[here] on GitHub. You
+should fork it to your own GitHub account for the purpose of this tutorial. Use
+the fork button in the top-right the repository page to do this. Once the
+forking completes you should clone it locally to your workspace using:
 
-You should fork it to your own GitHub account for the purpose of this tutorial. 
-Use the fork button in the top-right the repository page to do this.
+```bash
+$ cd workspace
+$ git clone https://github.com/YOURACCOUNT/android-showcase-template
+$ cd android-showcase-template
+```
 
-Once the fork completes you should clone it locally using a variant of the 
-following commands:
+### Explore the Showcase Application (Optional)
 
-image::git-clone-showcase.svg[Cloning Android Showcase Link,880,align="center"]
-
-Next, open Android Studio, click "Open an existing Android Studio project"
-and choose the directory we just cloned.
+Oen Android Studio and select "Open an existing Android Studio project" then
+choose the directory we just cloned as the project folder to open.
 
 image::android-open-project.png[Opening Android Showcase Link,800,align="center"]
 
@@ -37,3 +40,11 @@ moments to compile your application and launch the emulator, but will look as
 follows once complete.
 
 image::android-running.png[Running Android Device Link,800,align="center"]
+
+The Showcase Application demonstrates our SDK features and also integrates with
+a suite of Red Hat Mobile Services available on OpenShift that include:
+
+* Identity Management and SSO
+* Metrics
+* Device Security
+* Data Synchronisation

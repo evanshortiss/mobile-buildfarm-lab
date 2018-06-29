@@ -1,13 +1,14 @@
 ## Introduction
 
-_Note_: This lab assumes you've completed the starter OpenShift labs and are
-familiar with basic OpenShift concepts.
+_Note: This lab assumes you've completed the starter OpenShift labs and are
+familiar with basic OpenShift concepts._
 
 Continuous Integration and Continuous Delivery are two separate but closely
-concepts that help us to build better software. CI provides feedback to the
-developers that enables them to quickly determine if they broke anything and
-that they're building an application correctly. CD provides frequent builds 
-such that software can be rapidaly deployed, tested, and released.
+related concepts that help us to build better software. CI provides feedback to
+the developers that enables them to quickly determine if they have broken
+anything and that they're building an application correctly. CD provides
+frequent builds such that software can be rapidaly deployed, tested, and
+released.
 
 In this lab we'll create a continious integration and continuous delivery
 pipeline for a native Android application using a Jenkins CI instance deployed
@@ -18,39 +19,38 @@ development processes.
 
 ## How is Mobile Different?
 
-The truth is that mobile isn't all that different conceptually, but they're are
-some unique challenges.
+Mobile has some unique challenges to address in the CI/CD space.
 
-Delivery requires pushing applications to an MDM or other target such as
+* Delivery requires pushing applications to an MDM or other target such as
 Google's Play Store or Apple's App Store.
 
-The environment in which your application is deployed also isn't consistent due
+* The environment in which your application is deployed also isn't consistent due
 to the vast number of OS versions and vendors in the marketplace. You might need
 to test across these different devices via Google's Firebase Test Lab.
-
-On-device security is also a significant factor in mobile development.
+* On-device security is also a significant factor in mobile development.
 Typical users entrust their mobile devices and applications with access to
 sensitive data from banking to emails. Applications containing vulnerabilities
 can be exploited by malicious actors to divulge sensitive data or provide attack
 vectors.
-
-Finally, mobile CI/CD has typically had few to none available open source
-solutions that can be deployed in on-premise, hybird, or public cloud
-environments to meet the needs of enterprises and goverment.
+* Finally, mobile CI/CD has had few open source solutions that can be deployed
+in on-premise, hybird, or public cloud environments to meet the needs of
+enterprises and goverment agencies.
 
 ## AeroGear Android Showcase Application
+
+image::http://feedhenry.org/assets/images/aerogear.svg[AeroGear Logo,200,auto,float=right]
 
 The https://github.com/aerogear/android-showcase-template[Android Showcase] is a
 native Android application designed to demonstrate the capabilities that
 Red Hat's mobile SDKs and Mobile Services on OpenShift
-offer.
-
-Since it is a native Android application it is built using Java and the Android 
-SDKs. To compile  this application we'll need to have Java and the Android SDKs
-installed on the CI platform alongside a plethora of other supporting libraries
-and tools.
+offer. Since it is a native Android application it is built using Java and the
+Android  SDKs. To compile  this application we'll need to have Java and the
+Android SDKs installed on the CI platform alongside a plethora of other
+supporting libraries and tools.
 
 ## AeroGear Digger
+
+image::digger.png[Digger Logo,200,auto,float=right]
 
 Digger is an AeroGear opensource project that provides a solution to creating a
 mobile CI/CD pipeline on OpenShift. 
@@ -60,6 +60,9 @@ provides utilities for signing, archiving, and distributing via the Jenkinsfile
 in an mobile project repository.
 
 ## Jenkins CI Engine
+
+image::https://wiki.jenkins.io/download/attachments/2916393/logo-title.png?version=1&modificationDate=1302753947000&api=v2[Jenkins Logo,200,auto,float=right]
+
 Jenkins is a self-contained, extensible, open source automation server which can
 be used to automate all sorts of tasks such as building, testing, and deploying
 software.
@@ -76,6 +79,10 @@ included a powerful Continuous Delivery pipeline support using a Groovy Domain
 Specific Language (DSL) which is referred to as Pipeline as Code.
 
 ## OpenShift Container Platform
+
+image::https://www.openshift.com/hubfs/images/logos/osh/Logotype_RH_OpenShiftContainerPlatform_wLogo_RGB_Gray.svg?t=1529675934886[OpenShift Logo,200,auto,float=right]
+
+
 OpenShift is a container application platform from Red Hat that builds on top of
 docker and Kubernetes to to let you easily and quickly build, develop, 
 and deploy containerized applications in nearly any infrastructure, public or
