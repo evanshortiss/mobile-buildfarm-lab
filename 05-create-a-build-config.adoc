@@ -16,21 +16,21 @@ environment variables to customise the build process.
 
 Enter the following infromation in the form:
 
-* Name - android-showcase-debug
-* Git Repository URL - https://github.com/YOURACCOUNT/android-showcase-template
-* Authentication - Public
-* Build Type - Debug
+* *Name* - android-showcase-debug
+* *Git Repository URL* - https://github.com/YOURACCOUNT/android-showcase-template
+* *Authentication* - Public
+* *Build Type* - Debug
 
 A sample of the completed form is shown below.
 
 image::openshift-mar-with-build-form.png[Build Config Creation,800,align="center"]
 
-We used *Public* sa the *Authentication* setting since our repository is public
-on GitHub, but it's possible to use private Git repositories with industry
-standard authetication methods such as *SSH Keys*.
-
 Once you complete and submit the form you will be presented with an updated
 Build tab that displays your new *Build Config* like as shown.
+
+_Note: We used *Public* sa the *Authentication* setting since our repository is public
+on GitHub, but it's possible to use private Git repositories with industry
+standard authentication methods such as *SSH Keys*._
 
 image::openshift-mar-with-build-config.png[Build Config List,800,align="center"]
 

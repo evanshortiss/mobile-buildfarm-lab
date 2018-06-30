@@ -11,12 +11,19 @@ tab choose the *Mobile CI/CD Service*.
 
 image::mobile-service-catalog.png[OpenShift Catalog Mobile Tab Link,880,align="center"]
 
-Click the *Mobile CI/CD* link then enter "yes" into the 
+Click the *Mobile CI/CD* link then enter *yes* into the 
 *Android SDK License Agreement* box and leave the *Android SDK Package Config* 
-with the default values and click "Create".
+with the default values and click *Create*.
 
 Navigate to your project and you'll see that a Jenkins application is being 
-provisioned using the selected "Mobile CI/CD" APB. You can expand the
+provisioned using the selected *Mobile CI/CD APB*. This provisions three
+Applications that comprise the Mobile CI/CD Service:
+
+* jenkins-persistent
+* artifact-proxy
+* android-sdk-persistent
+
+You can expand the
 *jenkins-persistent* Application to see it accepts external connections via the
 route https://jenkins-$YOURPROJECT.{{OPENSHIFT_URL}}
 
@@ -29,16 +36,12 @@ configured Jenkins to use OpenShift as an OAuth provider.
 
 image::jenkins-evironment-config.png[Jenkins Environment Link,880,align="center"]
 
-Once the deployment is complete you will see the following Applications on the 
-Overview screen of your Project with 1 running Pod.
+Once the deployment is complete you will see the three Applications listed
+earlier on the  Overview screen of your Project, each with one running Pod.
 
-* jenkins-persistent
-* artifact-proxy
-* android-sdk-persistent
-
-Let's login to Jenkins using our OpenShift credentials. From the Overview screen
-of your Project click the Jenkins URL https://jenkins-$YOURPROJECT.{{OPENSHIFT_URL}}
-to access Jenkins. You should be presented with the following page.
+From the Overview screen of your Project click the Jenkins URL
+https://jenkins-$YOURPROJECT.{{OPENSHIFT_URL}} to access Jenkins. You should be
+presented with the following page.
 
 image::jenkins-login.png[Jenkins Login Screen,880,align="center"]
 

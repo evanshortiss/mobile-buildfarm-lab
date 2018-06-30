@@ -18,3 +18,5 @@ modules:
   - 04-provision-digger
   - 05-create-a-build-config
   - 06-first-build
+  - 07-binary-scanning-with-kryptowire
+  - 08-mdm-deployment

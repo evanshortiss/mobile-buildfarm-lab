@@ -20,7 +20,7 @@ modules:
     name: First Android Build
     vars:
       OPENSHIFT_HOSTNAME: '192.168.37.1.nip.io'
-      OPENSHIFT_SHORTNAME: 
-      OPENSHIFT_NAME:
-      OPENSHIFT_VERSION:
-  
+  07-binary-scanning-with-kryptowire:
+    name: "Binary Scanning with Kryptowire"
+  08-mdm-deployment:
+    name: "MDM Deployment"

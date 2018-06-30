@@ -11,7 +11,8 @@ $ docker run -p 8080:8080 \
 
 ## Usage on OpenShift
 ```
-$ oc new-app osevg/workshopper:latest --name=guides \
-    -e WORKSHOPS_URLS="https://raw.githubusercontent.com/evanshortiss/mobile-buildfarm-lab/workshop.yml"
-$ oc expose svc/guides
+$ oc new-app osevg/workshopper:latest --name=mobile-workshop \
+    -e CONTENT_URL_PREFIX=https://raw.githubusercontent.com/evanshortiss/mobile-buildfarm-lab/master \
+    -e WORKSHOPS_URLS=https://raw.githubusercontent.com/evanshortiss/mobile-buildfarm-lab/master/workshop.yml
+$ oc expose svc/mobile-workshop
 ```

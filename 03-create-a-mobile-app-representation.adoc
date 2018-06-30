@@ -1,6 +1,6 @@
 ## Register an Application
 
-To get started, lets register our application in our OpenShift Project.
+To get started, lets register our application in an OpenShift Project.
 Registering the application will allow us to perform various actions related to
 our mobile application in OpenShift including:
 
@@ -20,7 +20,8 @@ or https://github.com/aerogear/ios-showcase-template/blob/master/ios-showcase-te
 image::openshift-mar-create.png[OpenShift Register Android Application]
 
 Once the application is registered head to your Project and you'll see that it's
-listed on the Overview page as shown.
+listed on the Overview page. Clicking the arrow on the left will expand the
+Application entry and display more details as shown below.
 
 image::openshift-mar-view.png[OpenShift View Android Application]
 
@@ -31,14 +32,14 @@ Application as shown.
 
 image::openshift-mar-details.png[OpenShift Mobile Application Details,880,align="center"]
 
-Some information to displayed here is:
+Key information displayed here includes:
 
-* API Key - This will be presented when the application makes calls to services
-* Client Type - iOS, Android, Cordova, etc.
-* Client ID - The package naem of the client
-* SDK Configuration - A guide to configuring the SDK for your client application
-* Mobile Client Config - A configuration that will be updated as we
+* *API Key* - This will be presented when the application makes calls to services
+* *Client Type* - iOS, Android, Cordova, etc.
+* *Client ID* - The package naem of the client
+* *SDK Configuration* - A guide to configuring the SDK for your client application
+* *Mobile Client Config* - A configuration that will be updated as we
 provision mobile services for your application to integrate with. This should
-be added to any application as `mobile-config.json`, and will be used by our
-SDKs to interact with mobiel services provisioned on OpenShitf.
+be added to any application as *mobile-config.json*, and will be used by our
+SDKs to interact with mobile services provisioned on OpenShift.
 

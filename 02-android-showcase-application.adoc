@@ -14,15 +14,15 @@ $ cd android-showcase-template
 
 ### Explore the Showcase Application (Optional)
 
-Oen Android Studio and select "Open an existing Android Studio project" then
+Launch Android Studio and select *Open an existing Android Studio project* then
 choose the directory we just cloned as the project folder to open.
 
 image::android-open-project.png[Opening Android Showcase Link,800,align="center"]
 
 Once the project is loaded in Android Studio you should be able to use the
-`Run > Run 'app'` option from the menu to start the application in an emulator. 
-A `Select Deployment Target` window should open and from here you can choose
-"Create New Virtual Device".
+*Run > Run 'app'* option from the menu to start the application in an emulator. 
+A *Select Deployment Target* window should open and from here you can choose
+*Create New Virtual Device*.
 
 image::android-create-device-a.png[Create Android Device Window Link,800,align="center"]
 
@@ -34,7 +34,7 @@ image::android-create-device-c.png[Create Android Device OS Link,800,align="cent
 
 image::android-create-device-d.png[Create Android Device Options Link,800,align="center"]
 
-After clicking "Finish" on the final dialog you will be able to launch your
+After clicking *Finish* on the final dialog you will be able to launch your
 application on the newly created Google Pixel 2 emulator. It will take a few
 moments to compile your application and launch the emulator, but will look as
 follows once complete.
@@ -42,7 +42,9 @@ follows once complete.
 image::android-running.png[Running Android Device Link,800,align="center"]
 
 The Showcase Application demonstrates our SDK features and also integrates with
-a suite of Red Hat Mobile Services available on OpenShift that include:
+a suite of Red Hat Mobile Services available on OpenShift. 
+
+Available services include:
 
 * Identity Management and SSO
 * Metrics
